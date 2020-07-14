@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+                <th scope="col"></th>
+                <th scope="col"> FirstName</th>
+                <th scope="col"> LastName</th>
+                <th scope="col"> Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of studentList">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.firstname}}</td>
+              <td>{{item.lastname}}</td>
+              <td>{{item.email}}</td>
+              <td> 
+                <button type="button" class="btn btn-light" [routerLink]="['/student-edit', item.id]" ><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-light" (click)=" delete(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              </td>
+            </tr>
+ 
+        </tbody>
+   
+    </table>
+
+    <div class="row">
+      <button type="button" class="btn btn-dark" [routerLink]="['/student-create']">Add Student</button>
+    </div>
+</div>

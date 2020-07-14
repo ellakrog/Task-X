@@ -1,0 +1,13 @@
+
+.row{
+    height: 10rem;
+}
+.col-num{
+    width: 10rem;
+    height: 7rem;
+    border: 1px solid black;
+}
+.table tr.active  td {  
+    background-color:#48da24 !important;  
+    
+  } 

@@ -1,0 +1,36 @@
+<div class="container">
+    <br>
+    <div class="card text-center">
+        <div class="card-header">
+            <span>Add new Student</span>>
+        </div>
+    <div class="card-body">
+        <form class="form-register" [formGroup]="studentForm" (ngSubmit)="registerStudent()" >
+            <input formControlName='firstname'
+                type="text"
+                class="form-control"
+                placeholder="Enter name"
+                required minlength="3" />
+                <div class="alert  alert-danger" *ngIf=" !studentForm.get('firstname').valid && studentForm.get('firstname').touched">
+                    Firstname is required and should less than 3 characters
+                </div>
+            <input formControlName='lastname'
+                type="text"
+                class="form-control"
+                placeholder="Enter Lastname" />
+                <div class="alert  alert-danger" *ngIf=" !studentForm.get('lastname').valid && studentForm.get('lastname').touched">
+                    Lastname is required and should less than 3 characters
+                </div>
+            <input formControlName='email' 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter Email" />
+                <div class="alert  alert-danger" *ngIf="studentForm.get('email').hasError('required') && studentForm.get('email').touched">
+                    Email is required
+                </div>
+                <br>
+            <button [disabled]='studentForm.invalid' class="btn btn-default">Create Student</button>
+        </form>
+    </div>
+    </div>
+</div>
